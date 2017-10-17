@@ -26,15 +26,15 @@ angular.module('myApp.directives', []).
 
   scope.drawGraph = function(data) {
 	chart.selectAll('*').remove();
-  	var barHeight = 20,
-  barGap = 5,
+  	var barHeight = 25,
+  barGap = 8,
   graphOrigin = 150,
   chartWidth = chart.style('width'),
   chartHeight = scope.data.length * (barHeight + barGap),
   color = d3.scale.category10(),
   xScale = d3.scale.linear()
     .domain([0, d3.max(data, function(d) {
-     
+
       return d.amount;
 
     })])
@@ -63,7 +63,7 @@ chart.selectAll('categoryLabel')
   .append('text')
   .attr('fill', '#fff')
   .attr('y', function(d, i) {
-    return i * (barHeight + barGap) + 10;
+    return i * (barHeight + barGap) + 20;
   })
   .attr('x', (graphOrigin - 5))
   .attr('text-anchor', 'end')
@@ -77,7 +77,7 @@ chart.selectAll('values')
   .append('text')
   .attr('fill', '#fff')
   .attr('y', function(d, i) {
-    return i * (barHeight + barGap) + 15;
+    return i * (barHeight + barGap) + 20;
   })
   .attr('x', (graphOrigin + 5))
   .attr('text-anchor', 'start')
@@ -86,18 +86,17 @@ chart.selectAll('values')
   });
 
 
-    
+
   };
  scope.drawGraph(scope.data);
  $window.onresize = function() {
   scope.$apply(scope.drawGraph(scope.data));
 };
 
-       	
+
        },
 
        template: '<div id="chart"></div>'
      };
    }
  ]);
-

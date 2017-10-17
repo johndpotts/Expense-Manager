@@ -18,7 +18,6 @@ config(['$routeProvider',
       templateUrl: 'partials/home.html',
       controller: 'HomeCtrl'
 
-
     });
     $routeProvider.when('/add-expense', {
       templateUrl: 'partials/add-expense.html',

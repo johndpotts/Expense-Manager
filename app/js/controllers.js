@@ -8,9 +8,11 @@ angular.module('myApp.controllers', [])
 .controller('AddExpenseCtrl', ['$scope', 'categoryList','expService',function($scope, categoryList,expService) {
         $scope.categories = categoryList;
             $scope.submit = function() {
-      
-      expService.saveExpense($scope.expense);
-
+            expService.saveExpense($scope.expense);
+  $scope.addForm.$setPristine();
+    this.expense.category=null;
+    this.expense.description=null;
+    this.expense.amount=null;
     };
 
     }
@@ -22,7 +24,6 @@ angular.module('myApp.controllers', [])
 
 categoryList.forEach(function(item) {
         var catTotal = expService.getCategoryTotal(item);
-
         $scope.summaryData.push({
             category: item,
             amount: catTotal
@@ -34,9 +35,9 @@ categoryList.forEach(function(item) {
     }
   ])
   .controller('NavigationCtrl',['$scope','$location',function($scope,$location){
-  	
-  	
-  
+
+
+
 var navigator=function(incrementer){
 var pages=['/','/add-expense','/view-summary'];
 
@@ -44,7 +45,7 @@ var pages=['/','/add-expense','/view-summary'];
   	var currentPage = $location.path();
 var lastPageIndex= pages.length-1;
   	var pageIndex= pages.indexOf(currentPage);
-  	
+
 
 var direction= pageIndex+incrementer;
 if(direction===-1)direction=lastPageIndex;
@@ -69,4 +70,3 @@ navigator(1);
   	};
 
   }]);
-
