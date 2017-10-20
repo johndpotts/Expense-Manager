@@ -28,8 +28,7 @@ h1 {
   margin-bottom: 2em;
   margin-top: 2em;
   padding: 0 0 0.5em;
-  position: absolute;
-  bottom: 1em;
+
 }
 .menu li {
   margin: 2em 1em;
@@ -56,6 +55,7 @@ button{
   border: thin solid #3E7504;
   padding: 3px 8px;
   font-size: 1.2em;
+  cursor:pointer;
 }
 #addForm .ng-pristine {
     background: none!important;
@@ -77,30 +77,93 @@ button:disabled {
 .exp-details {
   clear: both;
 }
+.spaced{
+  margin-top:30px;
+  clear: both;
+}
 .exp-details >div {
-  float: left;
+
   padding: 0.5em 0.2em;
-  border-bottom: thin solid #eaeaea;
+
 }
-.exp-details .col-sm-1 {
-  width:5%;
+hr{
+  clear:both;
+  width:100%
 }
-.exp-details .col-sm-2 {
-  width:20%;
+@media (max-width:500px){
+.exp-details .id {
+  width:10%;
+  height:1.5em;
+  float: left;
 }
-.exp-details .col-sm-3 {
-  width:25%;
-}.exp-details .col-sm-4 {
+.exp-details .category {
   width:40%;
+  height:1.5em;
+    float: left;
+}
+.exp-details .details {
+  width:90%;
+  height:1.5em;
+    float: left;
+}
+.exp-details .amount {
+  width:30%;
+  height:1.5em;
+    float: left;
+}
+.exp-details .delete {
+  width:90%;
+  height:1.5em;
+    float: left;
+    margin-bottom:10px;
+}
+.newline {
+  width:90%;
+  height:5em;
+}
+}
+@media (min-width:501px){
+.exp-details .id {
+  width:5%;
+  height:1.5em;
+  float: left;
+}
+.exp-details .category {
+  width:20%;
+  height:1.5em;
+    float: left;
+}
+.exp-details .details {
+  width:40%;
+  height:1.5em;
+    float: left;
+}
+.exp-details .amount {
+  width:10%;
+  height:1.5em;
+    float: left;
+}
+.exp-details .delete {
+  width:10%;
+  height:1.5em;
+    float: left;
+    margin-bottom:10px;
+}
+.newline {
+  width:90%;
+  height:2em;
+}
 }
 
-@media all and (min-width: 680px){
-  #summary,#details{
-    float:left;
-    width:49%;
-    padding: 0.25em;
-  }
+
+.newline {
+  width:90%;
+  height:2em;
 }
+
+
+
+
 
 .page-slide {
   padding: 2%;
@@ -114,9 +177,9 @@ button:disabled {
 }
 
 .page-slide.ng-enter,.page-slide.ng-leave{
-   transition: all 0.9s ease-out;
-   -moz-transition: all 0.9s ease-out;
-   -webkit-transition: all 0.9s ease-out;
+   transition: all 0.1s ease-out;
+   -moz-transition: all 0.1s ease-out;
+   -webkit-transition: all 0.1s ease-out;
 }
 
 .slide-right.ng-leave{

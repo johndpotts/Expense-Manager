@@ -19,9 +19,21 @@ angular.module('myApp.controllers', [])
 ])
   .controller('ViewSummaryCtrl', ['$scope','expService','categoryList',function($scope,expService,categoryList) {
       $scope.expenses = expService.getExpense();
-
       $scope.summaryData = [];
 
+$scope.clearExpenses = function(){
+  if (confirm('Are you sure you want to delete all your expenses?')){
+  window.localStorage.clear();
+  location.reload();
+}
+};
+
+$scope.deleteItem = function(key){
+if (confirm('Are you sure you want to delete this expense?')){
+  localStorage.removeItem(key);
+location.reload();
+}
+};
 categoryList.forEach(function(item) {
         var catTotal = expService.getCategoryTotal(item);
         $scope.summaryData.push({
