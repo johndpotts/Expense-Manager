@@ -8,8 +8,8 @@ and gives the user an expense summary and graphical overview of expenses.
 - [x] Fix clear forms on submit
 - [x] Add favicon
 - [x] Fix alignment on graph
-- [ ] Add delete buttons on expenses
-- [ ] Add non-touch nav options
+- [x] Add delete buttons on expenses
+- [x] Add non-touch nav options
 - [ ] Add edit buttons on expenses
-- [ ] Add "delete all" option
+- [x] Add "delete all" option
 - [ ] Add user greeting to landing page
